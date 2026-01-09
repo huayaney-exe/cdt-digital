@@ -51,10 +51,10 @@ export default function DocsPage() {
             </div>
 
             <div className="border-l-4 border-[#009330] pl-4">
-              <h3 className="font-semibold text-gray-800">Lenguaje positivo en todos los escenarios</h3>
+              <h3 className="font-semibold text-gray-800">Honestidad sin promesas falsas</h3>
               <p className="text-gray-600 text-sm mt-1">
-                Incluso cuando un usuario no califica, el mensaje es "te contactaremos pronto" en lugar de
-                "necesitas verificación adicional". Esto reduce la fricción emocional y mantiene la relación.
+                Cuando un usuario no califica, el mensaje es honesto: "no tenemos una oferta lista para ti"
+                pero deja la puerta abierta: "de calificar, te contactaremos". No prometemos contactar a todos.
               </p>
             </div>
 
@@ -93,13 +93,12 @@ Response (Aprobado):
   "whatsapp_enabled": true
 }
 
-Response (Requiere revisión):
+Response (No califica):
 {
-  "status": "REVISION",
-  "message": "Requiere validación manual",
+  "status": "NO_CALIFICA",
+  "message": "Sin oferta disponible actualmente",
   "whatsapp_enabled": false,
-  "contacto_programado": true,
-  "tiempo_respuesta_horas": 24
+  "recontacto_posible": true
 }`}
             </pre>
           </div>
@@ -154,11 +153,11 @@ Response (Requiere revisión):
               </div>
             </div>
 
-            <div className="flex items-center gap-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
-              <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center font-bold text-white">4b</div>
+            <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
+              <div className="w-10 h-10 bg-gray-400 rounded-full flex items-center justify-center font-bold text-white">4b</div>
               <div>
-                <p className="font-semibold text-gray-800">Revisión → Llamada programada</p>
-                <p className="text-sm text-gray-600">Si requiere revisión: "Te contactaremos en 24 horas hábiles"</p>
+                <p className="font-semibold text-gray-800">No califica → Mensaje honesto</p>
+                <p className="text-sm text-gray-600">"No tenemos oferta lista, de calificar te contactaremos"</p>
               </div>
             </div>
           </div>
