@@ -12,69 +12,212 @@ export default function DocsPage() {
           <span>Volver al Demo</span>
         </Link>
         <span className="bg-[#FFCE00] text-[#1a1a1a] px-4 py-1 rounded-full text-sm font-semibold">
-          DOCUMENTACIÓN
+          DEBRIEFING
         </span>
       </header>
 
       {/* Content */}
       <main className="max-w-4xl mx-auto py-12 px-6">
         <h1 className="text-3xl font-bold text-gray-800 mb-2">
-          Mejora CDT - Documentación Técnica
+          CDT Digital - Debriefing de Implementación
         </h1>
         <p className="text-gray-600 mb-8">
-          Especificación del flujo de usuario y la integración con el API de validación de listas restrictivas.
+          Resumen ejecutivo del prototipo: flujo, decisiones UX/UI, y estrategia de rescate de usuarios.
         </p>
 
-        {/* Premisas de Diseño */}
+        {/* Resumen Ejecutivo */}
+        <section className="bg-[#009330]/5 border border-[#009330]/20 rounded-xl p-6 mb-6">
+          <h2 className="text-xl font-bold text-gray-800 mb-4">
+            Resumen Ejecutivo
+          </h2>
+          <p className="text-gray-700 mb-4">
+            Este prototipo implementa un flujo de simulación CDT con validación de listas restrictivas
+            <strong> previo al direccionamiento a WhatsApp</strong>. El objetivo es evitar que usuarios que no
+            califican lleguen a un asesor, optimizando recursos del canal.
+          </p>
+          <div className="grid grid-cols-3 gap-4 text-center">
+            <div className="bg-white p-3 rounded-lg">
+              <p className="text-sm text-gray-500">Problema</p>
+              <p className="font-semibold text-gray-800">Usuarios no calificados en WhatsApp</p>
+            </div>
+            <div className="bg-white p-3 rounded-lg">
+              <p className="text-sm text-gray-500">Solución</p>
+              <p className="font-semibold text-gray-800">Validación pre-WhatsApp</p>
+            </div>
+            <div className="bg-white p-3 rounded-lg">
+              <p className="text-sm text-gray-500">Resultado</p>
+              <p className="font-semibold text-gray-800">Solo leads calificados</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Flujo Implementado */}
         <section className="bg-white rounded-xl border p-6 mb-6">
           <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
             <span className="w-8 h-8 bg-[#009330] text-white rounded-full flex items-center justify-center text-sm">1</span>
-            Premisas de Diseño del Flujo
+            Flujo Implementado
+          </h2>
+
+          <div className="space-y-3">
+            <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
+              <div className="w-10 h-10 bg-[#009330] rounded-full flex items-center justify-center font-bold text-white">1</div>
+              <div className="flex-1">
+                <p className="font-semibold text-gray-800">Simulador CDT</p>
+                <p className="text-sm text-gray-600">Usuario ingresa monto. Sin requerir datos personales aún.</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
+              <div className="w-10 h-10 bg-[#009330] rounded-full flex items-center justify-center font-bold text-white">2</div>
+              <div className="flex-1">
+                <p className="font-semibold text-gray-800">Selección de Plazo</p>
+                <p className="text-sm text-gray-600">Visualiza opciones (6, 9, 12 meses) con tasa y ganancia. Selecciona y hace clic en "Invertir ahora".</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
+              <div className="w-10 h-10 bg-[#009330] rounded-full flex items-center justify-center font-bold text-white">3</div>
+              <div className="flex-1">
+                <p className="font-semibold text-gray-800">Captura de Datos</p>
+                <p className="text-sm text-gray-600">Nombre completo, cédula, celular. Autorización de tratamiento de datos.</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
+              <div className="w-10 h-10 bg-[#009330] rounded-full flex items-center justify-center font-bold text-white">4</div>
+              <div className="flex-1">
+                <p className="font-semibold text-gray-800">Validación (invisible)</p>
+                <p className="text-sm text-gray-600">Se muestra "Generando tu oferta..." mientras se valida contra listas restrictivas.</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 p-3 bg-[#25D366]/10 rounded-lg border border-[#25D366]/30">
+              <div className="w-10 h-10 bg-[#25D366] rounded-full flex items-center justify-center font-bold text-white">✓</div>
+              <div className="flex-1">
+                <p className="font-semibold text-gray-800">Éxito → WhatsApp</p>
+                <p className="text-sm text-gray-600">Resumen del CDT + botón que abre WhatsApp con mensaje pre-formateado.</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 p-3 bg-red-50 rounded-lg border border-red-200">
+              <div className="w-10 h-10 bg-gray-400 rounded-full flex items-center justify-center font-bold text-white">✗</div>
+              <div className="flex-1">
+                <p className="font-semibold text-gray-800">No califica → Mensaje honesto</p>
+                <p className="text-sm text-gray-600">"No tenemos una oferta lista para ti en este momento."</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Decisiones UX/UI */}
+        <section className="bg-white rounded-xl border p-6 mb-6">
+          <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <span className="w-8 h-8 bg-[#009330] text-white rounded-full flex items-center justify-center text-sm">2</span>
+            Decisiones UX/UI
           </h2>
 
           <div className="space-y-4">
             <div className="border-l-4 border-[#009330] pl-4">
-              <h3 className="font-semibold text-gray-800">Captura de datos POST-simulación</h3>
+              <h3 className="font-semibold text-gray-800">Commitment Escalation</h3>
               <p className="text-gray-600 text-sm mt-1">
-                Los datos de identidad (cédula, nombre, celular) se capturan <strong>después</strong> de que el usuario
-                ha simulado y seleccionado su CDT. Esto maximiza el compromiso (commitment escalation) y reduce
-                el abandono temprano.
+                Los datos personales se piden <strong>después</strong> de simular y seleccionar el CDT.
+                El usuario ya invirtió tiempo y mostró interés real antes de compartir información sensible.
               </p>
             </div>
 
             <div className="border-l-4 border-[#009330] pl-4">
-              <h3 className="font-semibold text-gray-800">Validación invisible para el usuario</h3>
+              <h3 className="font-semibold text-gray-800">Orden de Campos Optimizado</h3>
               <p className="text-gray-600 text-sm mt-1">
-                La validación contra listas restrictivas ocurre en backend sin que el usuario perciba que está
-                siendo "evaluado". El flujo se presenta como "preparando tu conexión con WhatsApp".
+                Nombre → Cédula → Celular. El nombre es menos intimidante, la cédula valida identidad,
+                el celular cierra el compromiso de contacto.
               </p>
             </div>
 
             <div className="border-l-4 border-[#009330] pl-4">
-              <h3 className="font-semibold text-gray-800">Honestidad sin promesas falsas</h3>
+              <h3 className="font-semibold text-gray-800">Validación Invisible</h3>
               <p className="text-gray-600 text-sm mt-1">
-                Cuando un usuario no califica, el mensaje es honesto: "no tenemos una oferta lista para ti"
-                pero deja la puerta abierta: "de calificar, te contactaremos". No prometemos contactar a todos.
+                El usuario no sabe que está siendo validado contra listas restrictivas.
+                Solo ve "Generando tu oferta..." — evitamos ansiedad innecesaria.
               </p>
             </div>
 
             <div className="border-l-4 border-[#009330] pl-4">
-              <h3 className="font-semibold text-gray-800">Celular para recontacto de falsos positivos</h3>
+              <h3 className="font-semibold text-gray-800">Rechazo Honesto Sin Promesas Falsas</h3>
               <p className="text-gray-600 text-sm mt-1">
-                El número de celular no solo se usa para WhatsApp sino para recontactar usuarios que fueron
-                falsamente rechazados por las listas restrictivas (falsos positivos).
+                Cuando alguien no califica, el mensaje es claro pero no agresivo:
+                "No tenemos una oferta lista para ti". No prometemos contactar a todos.
+              </p>
+            </div>
+
+            <div className="border-l-4 border-[#009330] pl-4">
+              <h3 className="font-semibold text-gray-800">Resumen Visual Pre-WhatsApp</h3>
+              <p className="text-gray-600 text-sm mt-1">
+                Antes de ir a WhatsApp, el usuario ve un resumen completo de su CDT:
+                monto, plazo, tasa, intereses estimados, total al vencimiento. Refuerza la decisión.
               </p>
             </div>
           </div>
         </section>
 
-        {/* API de Validación */}
+        {/* Estrategia de Rescate */}
         <section className="bg-white rounded-xl border p-6 mb-6">
           <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-            <span className="w-8 h-8 bg-[#009330] text-white rounded-full flex items-center justify-center text-sm">2</span>
-            API de Validación de Listas Restrictivas
+            <span className="w-8 h-8 bg-[#009330] text-white rounded-full flex items-center justify-center text-sm">3</span>
+            Estrategia de Rescate de Usuarios
           </h2>
 
+          <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-4">
+            <h4 className="font-semibold text-amber-800 mb-2">Problema: Falsos Positivos</h4>
+            <p className="text-sm text-amber-700">
+              Las listas restrictivas pueden rechazar usuarios que en realidad sí califican
+              (homonimia, datos desactualizados, errores de sistema). Sin un mecanismo de rescate,
+              perdemos oportunidades comerciales válidas.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold text-gray-800">Captura de Datos de Todos los Usuarios</h3>
+              <p className="text-gray-600 text-sm mt-1">
+                Independiente del resultado de validación, almacenamos: nombre, cédula, celular,
+                CDT seleccionado (monto, plazo, tasa), timestamp, y resultado de validación.
+              </p>
+            </div>
+
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold text-gray-800">Cola de Revisión Manual</h3>
+              <p className="text-gray-600 text-sm mt-1">
+                Los usuarios marcados como "NO_CALIFICA" entran a una cola de revisión.
+                Un analista puede verificar si fue falso positivo y reclasificarlo.
+              </p>
+            </div>
+
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold text-gray-800">Recontacto Proactivo</h3>
+              <p className="text-gray-600 text-sm mt-1">
+                Si tras revisión el usuario sí califica, el banco puede contactarlo al celular registrado:
+                "Tenemos buenas noticias sobre tu solicitud de CDT". El interés ya está demostrado.
+              </p>
+            </div>
+
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h3 className="font-semibold text-gray-800">Datos para Análisis</h3>
+              <p className="text-gray-600 text-sm mt-1">
+                La data acumulada permite analizar: tasa de rechazo, montos promedio rechazados,
+                patrones de usuarios que no califican, y oportunidades de mejora en las listas.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Especificación Técnica */}
+        <section className="bg-white rounded-xl border p-6 mb-6">
+          <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <span className="w-8 h-8 bg-[#009330] text-white rounded-full flex items-center justify-center text-sm">4</span>
+            Especificación Técnica
+          </h2>
+
+          <h3 className="font-semibold text-gray-800 mb-3">API de Validación</h3>
           <div className="bg-gray-900 rounded-lg p-4 mb-4 overflow-x-auto">
             <pre className="text-sm text-gray-100">
 {`POST /api/validacion/listas-restrictivas
@@ -83,147 +226,78 @@ Request:
 {
   "cedula": "1234567890",
   "nombre": "Juan Carlos Pérez",
-  "celular": "3101234567"
+  "celular": "3101234567",
+  "cdt": {
+    "monto": 5000000,
+    "plazo": 12,
+    "tasaEA": 11.5
+  }
 }
 
 Response (Aprobado):
 {
   "status": "APROBADO",
-  "message": "Cliente habilitado para apertura de CDT",
   "whatsapp_enabled": true
 }
 
 Response (No califica):
 {
   "status": "NO_CALIFICA",
-  "message": "Sin oferta disponible actualmente",
   "whatsapp_enabled": false,
-  "recontacto_posible": true
+  "guardado_para_revision": true
 }`}
             </pre>
           </div>
 
-          <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-            <h4 className="font-semibold text-amber-800 mb-2">Características del servicio</h4>
-            <ul className="text-sm text-amber-700 space-y-1">
-              <li>• <strong>Respuesta inmediata:</strong> El servicio responde en menos de 2 segundos</li>
-              <li>• <strong>Disponibilidad:</strong> 99.9% uptime, integrado con sistemas de cumplimiento</li>
-              <li>• <strong>Auditoría:</strong> Todas las consultas quedan registradas para compliance</li>
-            </ul>
+          <h3 className="font-semibold text-gray-800 mb-3">Mensaje WhatsApp Pre-formateado</h3>
+          <div className="bg-gray-100 rounded-lg p-4 text-sm text-gray-700">
+            <p className="font-mono">
+              Hola, quiero abrir un CDT por $5.000.000 a 12 meses con tasa del 11.5% E.A.
+              Mi nombre es Juan Pérez, cédula 1234567890.
+            </p>
           </div>
         </section>
 
-        {/* Flujo de Estados */}
-        <section className="bg-white rounded-xl border p-6 mb-6">
-          <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-            <span className="w-8 h-8 bg-[#009330] text-white rounded-full flex items-center justify-center text-sm">3</span>
-            Flujo de Estados del Usuario
-          </h2>
-
-          <div className="space-y-3">
-            <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
-              <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600">1</div>
-              <div>
-                <p className="font-semibold text-gray-800">Simulador</p>
-                <p className="text-sm text-gray-600">Usuario ingresa monto y ve opciones de plazo</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
-              <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600">2</div>
-              <div>
-                <p className="font-semibold text-gray-800">Selección de Plazo</p>
-                <p className="text-sm text-gray-600">Usuario elige el CDT que prefiere y hace clic en "Invertir ahora"</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
-              <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-600">3</div>
-              <div>
-                <p className="font-semibold text-gray-800">Datos de Contacto</p>
-                <p className="text-sm text-gray-600">Captura de nombre, cédula y celular (orden optimizado por UX)</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4 p-3 bg-[#25D366]/10 rounded-lg border border-[#25D366]/30">
-              <div className="w-10 h-10 bg-[#25D366] rounded-full flex items-center justify-center font-bold text-white">4a</div>
-              <div>
-                <p className="font-semibold text-gray-800">Éxito → WhatsApp</p>
-                <p className="text-sm text-gray-600">Si califica: transición directa a WhatsApp con datos pre-llenados</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
-              <div className="w-10 h-10 bg-gray-400 rounded-full flex items-center justify-center font-bold text-white">4b</div>
-              <div>
-                <p className="font-semibold text-gray-800">No califica → Mensaje honesto</p>
-                <p className="text-sm text-gray-600">"No tenemos oferta lista, de calificar te contactaremos"</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Métricas Esperadas */}
-        <section className="bg-white rounded-xl border p-6 mb-6">
-          <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-            <span className="w-8 h-8 bg-[#009330] text-white rounded-full flex items-center justify-center text-sm">4</span>
-            Métricas Esperadas
-          </h2>
-
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="text-2xl font-bold text-[#009330]">75%</p>
-              <p className="text-sm text-gray-600">Tasa de completación del formulario</p>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="text-2xl font-bold text-[#009330]">&lt;2s</p>
-              <p className="text-sm text-gray-600">Tiempo de respuesta del API</p>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="text-2xl font-bold text-[#009330]">95%</p>
-              <p className="text-sm text-gray-600">Usuarios que califican (pasan listas)</p>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="text-2xl font-bold text-[#009330]">60%</p>
-              <p className="text-sm text-gray-600">Conversión simulación → WhatsApp</p>
-            </div>
-          </div>
-        </section>
-
-        {/* Consideraciones Técnicas */}
+        {/* Notas del Demo */}
         <section className="bg-white rounded-xl border p-6">
           <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
             <span className="w-8 h-8 bg-[#009330] text-white rounded-full flex items-center justify-center text-sm">5</span>
-            Consideraciones para Implementación
+            Notas del Demo
           </h2>
 
           <div className="space-y-3 text-sm">
             <div className="flex items-start gap-2">
               <span className="text-[#009330]">✓</span>
               <p className="text-gray-700">
-                <strong>Demo Mode:</strong> En este demo, cédulas que inician con "999" simulan el escenario de revisión.
+                <strong>Modo Demo:</strong> Cédulas que inician con "999" simulan el escenario de "No califica" para testing.
               </p>
             </div>
             <div className="flex items-start gap-2">
               <span className="text-[#009330]">✓</span>
               <p className="text-gray-700">
-                <strong>Integración WhatsApp:</strong> URL generada con mensaje pre-formateado incluyendo datos del CDT.
+                <strong>WhatsApp:</strong> Abre la app con mensaje pre-llenado. Número destino configurable.
               </p>
             </div>
             <div className="flex items-start gap-2">
               <span className="text-[#009330]">✓</span>
               <p className="text-gray-700">
-                <strong>Cumplimiento Ley 1581:</strong> Checkbox de autorización obligatorio antes de procesar datos.
+                <strong>Tasas:</strong> Las tasas mostradas son ilustrativas. En producción vendrían del core bancario.
               </p>
             </div>
             <div className="flex items-start gap-2">
               <span className="text-[#009330]">✓</span>
               <p className="text-gray-700">
-                <strong>Orden de campos:</strong> Nombre → Cédula → Celular (optimizado por psicología conductual).
+                <strong>Compliance:</strong> Autorización Ley 1581 de 2012 obligatoria antes de enviar datos.
               </p>
             </div>
           </div>
         </section>
+
+        {/* Footer */}
+        <footer className="mt-8 pt-6 border-t text-center text-sm text-gray-500">
+          <p>Prototipo desarrollado por Innovación Digital - Mibanco Colombia</p>
+          <p className="mt-1">Última actualización: Enero 2025</p>
+        </footer>
       </main>
     </div>
   );
